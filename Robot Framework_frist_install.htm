@@ -1,0 +1,232 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=zh-cn xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<META content="IE=8.0000" http-equiv="X-UA-Compatible">
+<TITLE>Robot Framework quick guideline---Composer:Qi Congyun</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+</HEAD>
+<BODY tangram_guid="TANGRAM_5"><A name=top></A>
+<DIV id=page_begin_html></DIV>
+<SCRIPT>load_page_begin_html();</SCRIPT>
+<DIV id=header>
+<DIV id=blogTitle><!--done-->
+<DIV class=title><A id=Header1_HeaderTitle class=headermaintitle>QiCONGYUN</A></DIV>
+<DIV class=subtitle>RobotFramework discussion workgroup</DIV></DIV><!--end: Home of RV's Python discussion Group -->
+<DIV id=navigator>
+<DIV id=main>
+<DIV id=mainContent>
+<DIV class=forFlow>
+<DIV id=post_detail><!--done-->
+<DIV id=topics>
+<DIV class=post>
+<H1 class=postTitle><A id=cb_post_title_url class=postTitle2>Robot Framework Install Guideline</A> </H1>
+<DIV class=clear></DIV>
+<P><STRONG>Software package sotred list: </STRONG></P>
+<DIV class=clear></DIV>
+<P><STRONG><BR></STRONG>Jan.20, 2016 update</P>
+<p><strong>对Robot Framework的简单介绍</strong></p>
+<p>Robot Framework（以下简称RF）是一种基于Python的可扩展关键字驱动自动化测试框架。RF是一种通用的，应用和技术相互独立的框架，下面是一幅模块化的结构图，图片来自官方文档。</p>
+<p><a href="http://cgmblog-wordpress.stor.sinaapp.com/uploads/2012/12/RF模块化结构.png" rel="lightbox[204]"><img title="RF模块化结构" src="./RFmoduleview.jpg" alt="" width="332" height="248" /></a></p>
+<p>若想更深入的了解RF，推荐你好好看一下RF的官方文档，地址：<a href="http://code.google.com/p/robotframework/">http://code.google.com/p/robotframework/</a></p>
+<p>我一接触到它，就觉得它方便易用，作为一款开源软件，在通信和互联网行业会很流行，配合Selenium2Library，做自动化的web测试非常的简单易用。</p>
+<P>1.python 
+2.7<BR>http://www.python.org/download/<BR>http://www.python.org/ftp/python/2.7.3/python-2.7.3.msi<BR>-------------------------------------------------------------------------------------------------</P>
+<P>2.wxPython<BR>http://www.wxpython.org/download.php<BR>http://downloads.sourceforge.net/wxpython/wxPython2.8-win32-unicode-2.8.12.1-py27.exe<BR>-------------------------------------------------------------------------------------------------</P>
+<P>3.robot 
+framework<BR>http://code.google.com/p/robotframework/downloads/list<BR>http://robotframework.googlecode.com/files/robotframework-2.7.1.win32.exe</P>
+<P>robotframework-2.7.1.jar 2.7.1: Standalone JAR distribution (contains Jython) 
+Featured Mar 26 Mar 26 15.2 MB 502 <BR>robotframework-2.7.1.win32.exe 2.7.1: 
+Graphical installer for 32bit Windows Featured Mar 26 Mar 26 699 KB 1145 
+<BR>robotframework-userguide-2.7.1.zip 2.7.1: User Guide (also available online) 
+Featured <BR>robotframework-quickstart-20090113.zip 
+<BR>------------------------------------------------------------------------------------------------</P>
+<P>4.robot framework 
+ride<BR>https://github.com/robotframework/RIDE/downloads<BR>https://github.com/downloads/robotframework/RIDE/robotframework-ride-0.44.win32.exe<BR>-------------------------------------------------------------------------------------------------</P>
+<P>5.robot framework 
+seleniumlibrary<BR>https://github.com/rtomac/robotframework-selenium2library/downloads<BR>https://github.com/downloads/rtomac/robotframework-selenium2library/robotframework-selenium2library-1.0.0.win32.exe<BR>https://github.com/downloads/rtomac/robotframework-selenium2library/robotframework-selenium2library-1.0.0-demo.zip<BR>-------------------------------------------------------------------------------------------------</P>
+<P><STRONG>&nbsp;</STRONG></P>
+<P><STRONG>文章内容包括：</STRONG></P>
+<P><STRONG>&nbsp;</STRONG></P>
+<P>如何安装Robot Framework的准备环境</P>
+<P>如何安装Robot Framework</P>
+<P>如何安装用例编写集成环境Ride</P>
+<UL>
+  <LI><STRONG>安装python</STRONG></LI></UL>
+<P>Robot Framework是用Python语言写的，所以<SPAN style="COLOR: #ff0000">在安装Robot 
+Framework以前必须安装Python环境</SPAN>。</P>
+<P>从RF2.5开始，Robotframework仅支持Python2.5或者更新版本，RF2.5以前的版本支持Python2.3以及更早的版本。如果是Unix系统，Python已经默认安装了。如果是Windows系统，则需要自己安装。RobotFramework不支持Python3.x版本。安装例子是Python2.6.6版本，我自己使用的是Python2.7.11版本。</P>
+<P>通过下面链接进入2.6.6页面</P>
+<P><A 
+href="http://www.python.org/getit/releases/2.6.6/">http://www.python.org/getit/releases/2.6.6/</A></P>
+<P>（python official web is often not accessed, pls choice the FTP server to download Python package. <A 
+href="http://www.python.org/ftp/python/">http://www.python.org/ftp/python/</A>&nbsp; 
+）&nbsp;</P>
+<P>根据你的windows版本选择安装包，如果你使用32位的windows，选</P>
+<P><SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: 16px Arial, Verdana, Geneva, 'Bitstream Vera sans', Helvetica, sans-serif; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+style="LINE-HEIGHT: 21px; FONT-SIZE: 15px"><A 
+href="http://www.python.org/ftp/python/2.6.6/python-2.6.6.msi"><SPAN 
+style="FONT-FAMILY: Arial">Windows x86 MSI Installer 
+(2.6.6)</SPAN></A><SPAN><SPAN style="FONT-FAMILY: Arial">&nbsp;</SPAN></SPAN><A 
+href="http://www.python.org/getit/releases/2.6.6/python-2.6.6.msi.asc"><SPAN 
+style="FONT-FAMILY: Arial">(sig)</SPAN></A></SPAN></SPAN></P>
+<P>&nbsp;</P>
+<P>下载后一路Next安装。</P>
+<P>安装后注意把python目录本身和它的子目录Script加入到环境变量的Path项。如&nbsp;D:\Python27 
+和&nbsp;D:\Python27\Scripts</P>
+<P>&nbsp;</P>
+<P>Tip:如果你已经装了3.X，请看其它资料解决多版本python共存问题</P>
+<UL>
+  <LI>安装Jython</LI></UL>
+<P><SPAN style="COLOR: #ff0000">如果你需要使用Java开发拓展测试类库，则必须安装Jython</SPAN></P>
+<P>Jython和python的区别可见下文：</P>
+<P><A 
+href="http://developer.51cto.com/art/200907/136978.htm">http://developer.51cto.com/art/200907/136978.htm</A></P>
+<P>&nbsp;</P>
+<P>安装Jython需要Jdk5或以上，可以在命令行模式下用 Java -version 指令查看JAVA的版本。</P>
+<P>如果机子上没有，可以自己去Java的官网下载安装</P>
+<P>&nbsp;</P>
+<P>JDK1.6官方下载_JDK6官方下载地址:<A 
+href="http://www.java.net/download/jdk6/6u10/promoted/b32/binaries/jdk-6u10-rc2-bin-b32-windows-i586-p-12_sep_2008.exe" 
+target=_blank><SPAN 
+style="COLOR: #0000ff">http://www.java.net/download/jdk6/6u10/promoted/b32/binaries/jdk-6u10-rc2-bin-b32-windows-i586-p-12_sep_2008.exe</SPAN></A></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Jython的下载页面是如下链接：</P>
+<P><A 
+href="http://www.jython.org/downloads.html">http://www.jython.org/downloads.html</A></P>
+<P>选择2.5.2及以上版本下载。</P>
+<P>&nbsp;</P>
+<P>安装很简单：在命令行模式下，进入下载好的jar包目录运行下面指令</P><PRE> <SPAN style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: 16px sans-serif; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px">java -jar jython_installer-2.5.2.jar</SPAN> </PRE>
+<UL>
+  <LI><STRONG>安装Robot Framework</STRONG></LI></UL>
+<Div>&nbsp;</Div>
+<Div>有3种不同的方式安装RF：</Div>
+<Div>
+<Div>1. windowns 平台二进制安装，双击安装程序，一路点击下一步即可。</Div>
+<Div>2. 从RF官方网站上，可以下载RF source code,解压源文件，并在Widnows、或者Linux、Unix系统下，运行setup.py install即可。源文件包中的install.py是卸载RF的脚本。</Div>
+<Div>3. 如果Python包管理系统有PIP安装工具包，可以直接使用PIP安装。在OS提示符下输入：PIP install robotframework即可。</P>
+<P>&nbsp;建议安装最新的2.8.5版本，下载Win32版本（64位操作系统可下载64位版本）</Div></Div>
+<P><A href="http://code.google.com/p/robotframework/downloads/detail?name=robotframework-2.6.0.win32.exe">http://code.google.com/p/robotframework/downloads/detail?name=robotframework-2.6.0.win32.exe</A></P>
+<P>下载后一路next完成安装。</P>
+<P>&nbsp;加入环境变量方法：我的电脑上点击右键--选择系统-在弹出窗口找到“高级”选项卡-选择右下角的“环境变量”-在系统变量里找到Path项-添加到最后，多个环境变量之间用 
+“;”&nbsp;&nbsp;隔开</P>
+<UL>
+  <LI><STRONG>验证安装是否成功</STRONG></LI></UL>
+<P>在命令行输入：</P>
+<P>pybot --version&nbsp;如果成功显示版本号则说明安装成功。</P>
+<P>jybot --version&nbsp;如果成功显示版本号则说明Jython环境也安装成功，可以两条腿走路了。</P>
+<P>&nbsp;</P>
+<UL>
+  <LI><STRONG>安装Ride</STRONG></LI></UL>
+<P>安装Ride前，需要预先安装支撑Ride的运行库wxPython，这个概念有点儿类似Java的Swing库。</P>
+<P>进入wxPython的下载页面</P>
+<P><A 
+href="http://wxpython.org/download.php#stable">http://wxpython.org/download.php#stable</A></P>
+<P><SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: nowrap; FONT-SIZE: small">win32, 然后选择页面上的特定版本（需要注意的是：选择针对与python2.7.11的wxPython，不同版本python对应不同版本的wxPython，<SPAN 
+style="COLOR: #ed1c24">而且，为支持中文版的Robot Framework, 必须选unicode，请参考unicode相关文档。</SPAN>）</SPAN></SPAN></P>
+<P><SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: nowrap; FONT-SIZE: small"><A 
+href="http://downloads.sourceforge.net/wxpython/wxPython2.8-win32-unicode-2.8.12.1-py27.exe"><SPAN>wxPython2.8-win32-unicode-py27</SPAN></A></SPAN></SPAN></P>
+<P>&nbsp;</P>
+<P><SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: nowrap; FONT-SIZE: small">下载后一路Next安装。</SPAN></SPAN></P>
+<P>&nbsp;</P>
+<P><SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: nowrap; FONT-SIZE: small">安装完wxPython后就可以安装Ride了。</SPAN></SPAN></P>
+<P><SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: nowrap; FONT-SIZE: small">进入Ride的主页，在左下方找到下载链接。（目前最高版本为1.5.2.1）</SPAN></SPAN></P>
+<P><SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: nowrap; FONT-SIZE: small"><A 
+href="http://code.google.com/p/robotframework-ride/">http://code.google.com/p/robotframework-ride/</A></SPAN></SPAN></P>
+<P><SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: nowrap; FONT-SIZE: small">下载后，一路Next安装到完成。</SPAN></SPAN></P>
+<P>&nbsp;</P>
+<UL>
+  <LI><SPAN 
+  style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+  style="WHITE-SPACE: nowrap; FONT-SIZE: small"><STRONG>验证RIDE安装成功</STRONG></SPAN></SPAN></LI></UL>
+<P><SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: nowrap; FONT-SIZE: small">在命令行输入：</SPAN></SPAN></P><PRE> <SPAN style="WIDOWS: 2; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; BORDER-COLLAPSE: separate; FONT: medium simsun; WHITE-SPACE: normal; ORPHANS: 2; LETTER-SPACING: normal; COLOR: #000000; WORD-SPACING: 0px; -webkit-text-size-adjust: auto; -webkit-border-horizontal-spacing: 0px; -webkit-border-vertical-spacing: 0px; -webkit-text-decorations-in-effect: none; -webkit-text-stroke-width: 0px"><SPAN style="FONT-FAMILY: Lucida Console"><SPAN style="COLOR: #000000">ride</SPAN><SPAN style="COLOR: #666600">.</SPAN><SPAN style="COLOR: #000000">py</SPAN></SPAN></SPAN> </PRE>
+<P>如果下面的RIDE界面出现则安装成功，若提示错误则可能是wyPython没有正确安装或者ride.py没有在环境变量pyth中，需要手动添加环境变量（一般Ride.py会自动被安装到python的Scripts目录下。）</P>
+<P><IMG title="Robot&nbsp;<wbr>Framework安装指南" 
+name=image_operate_14891314856436921 alt="Robot&nbsp;<wbr>Framework安装指南" 
+src="http://wiki.robotframework-ride.googlecode.com/hg/images/completionkw.png" 
+width=690 height=494></P>
+<P>&nbsp;</P></DIV>
+<DIV style="DISPLAY: block" id=MySignature jQuery1707762334921446641="1">
+<div align="right" style="margin-top: 15px; font-style: italic"></div>
+<P>&nbsp;</P>
+<DIV><P> 安装RIDE，更简单的方法：</P></DIV>
+<DIV><P>1. pip install robotframework </P></DIV>
+<DIV><P>2. pip install robotframework-ride </P></DIV>
+<DIV><P>3. pip install robotframework-selenium2library </P></DIV>
+</P>
+<P>==================================================================================================================================</P>
+
+<div>三、Robot Framework基础</div>
+<div>1. 变量</div>
+<div>变量是 Robot Framework的完整特征，它们能在测试数据的大多数地方被使用。最常见的是，在测试用例表和关键字表中被用于关键字的参数，但是所有设置的值中都允许使用变量。一个普通的关键字名称不能使用变量来指定，但使用内建关键字Run Keyword&nbsp;可以获得这种效果.</div>
+<ul>
+<li>标量：语法${scalar}。当在测试数据中使用标量变量时，他们将被分配的值所代替。</li>
+<li>列表变量：语法@{LIST}。列表变量是复合变量，可以分配多个值给它。</li>
+<li>内建变量：</li>
+<ul>
+<li>操作系统相关的变量</li>
+<li>数字变量：变量语法可以用来创建一个全是整型和浮点型的数字:整形${80}、浮点型 ${3.14}</li>
+<li>Boolean变量：${true/false}</li>
+<li>Null/None变量: ${null/None}</li>
+<li>空格${SPACE}和空${EMPTY}变量</li></ul></ul>
+<div>2. 测试文件语法</div>
+<div>1. 测试用例的组织层次结构：</div>
+<ul>
+<li>在测试用例文件（test case file）中建立测试用例；</li>
+<li>一个测试文件自动的建成一个包含了这些测试用例的测试集（test suite）；</li>
+<li>一个包含多个测试用例文件（test case file）的目录构成更高级别的测试集；</li>
+<li>一个测试集目录可以包含其他测试集目录</li></ul>
+<p>此外，还有：</p>
+<ul>
+<li>测试库（Test libraries）包含最低级别的关键字</li>
+<li>资源文件（Resource files）包含变量和更高层次的用户自定义关键字</li>
+<li>变量文件（Variable files）可以提供比资源文件更灵活的方式创建变量</li></ul><div><br></div>
+<div>3. 支持的文件格式</div>
+<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 测试数据被定义为表格形式，无论是使用超文本标记语言（HTML），制表符分隔值（TSV），纯文字，或&nbsp;reStructuredText格式。Robot Framework通过文件扩展名为其选择一个测试数据解释器。只为HTML和TSV&nbsp;两种文件格式提供了模板。</div>
+<div>&nbsp;HTML文件模板：</div>
+<div>&nbsp;&nbsp;</div><div><img src="http://userimage2.360doc.com/11/1230/10/54470_201112301057190506.jpg"></div><div>&nbsp;</div><div>TSV文件模板：</div><div><div>&nbsp;</div><div><img src="http://userimage2.360doc.com/11/1230/11/54470_201112301100560038.jpg"></div><div><br></div><div>&nbsp;4.&nbsp;测试数据表格</div></div><div><div>测试数据被组织在以下四种表格中。这些测试数据表格通过表格的第一个单元格被识别，下列表格的最后一列列出了可以做为表名称使用的不同别名。</div></div><div>在一个测试文件中，Setting与Test Case是必须要有的。</div><div><table border="1" cellpadding="3" cellspacing="0" width="500" style="width: 600px; border-top-color: rgb(0, 112, 224); border-right-color: rgb(0, 112, 224); border-bottom-color: rgb(0, 112, 224); border-left-color: rgb(0, 112, 224); "><tbody><tr><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><span style="font-size: 16px; line-height: 24px; text-align: left; ">Table name &nbsp;</span></td><td>&nbsp;Used for</td><td>Aliases &nbsp;</td></tr><tr><td style="text-align: left;"><span style="font-size: 16px; line-height: 24px; ">Setting table</span><span style="text-align: -webkit-auto; ">&nbsp;&nbsp;</span></td><td style="text-align: left;"><span style="font-size: 16px; line-height: 24px; ">1.导入测试库，资源文件和变量文件<br></span><span style="font-size: 16px; line-height: 24px; ">2. 为测试集和测试用例定义元数据</span></td><td>Setting<br>Settings<br>Metadata</td></tr><tr><td><div style="font-size: 16px; line-height: 24px; text-align: left; "><div><br></div></div>Variable table</td><td style="text-align: left;"><span style="font-size: 16px; line-height: 24px; ">定义可以用在其他地方的测试数据的变量</span></td><td>Variable<br>Variables</td></tr><tr><td>Test case table</td><td style="text-align: left;"><span style="font-size: 16px; line-height: 24px; ">通过可用的关键字创建测试用例。</span></td><td>Test case<br>Test cases</td></tr><tr><td><div style="font-size: 16px; line-height: 24px; text-align: left; ">Keyword table</div>&nbsp;</td><td><span style="font-size: 16px; line-height: 24px; text-align: left; ">通过低级别关键字创建用户自定义关键字</span>&nbsp;
+<!--EndFragment--></td><td><div style="font-size: 16px; line-height: 24px; text-align: left; ">Keyword</div><div style="font-size: 16px; line-height: 24px; text-align: left; ">Keywords</div><div style="font-size: 16px; line-height: 24px; text-align: left; ">User Keyword</div><div style="font-size: 16px; line-height: 24px; text-align: left; ">User Keywords</div></td></tr></tbody></table><div><br></div></div><div><div>&nbsp;</div></div>
+<div>四. 创建测试用例实例</div><div>下面以官网自带例子（<a href="http://robotframework.googlecode.com/files/robotframework-quickstart-20090113.zip" target="_blank">Quick Start Guide</a>)说明如何创建测试用例，测试文件使用HTML格式，为理解及设计方便，将以下各表放在一个html文件中。</div><div>1. &nbsp;首先编写Setting table</div><div><br></div><div><table border="1" cellpadding="3" cellspacing="0" width="500" style="width: 800px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(0, 80, 242); border-right-color: rgb(0, 80, 242); border-bottom-color: rgb(0, 80, 242); border-left-color: rgb(0, 80, 242); "><tbody><tr><td><span style="font-size: 16px; line-height: 24px; text-align: left; ">Setting</span>&nbsp;</td><td><span style="font-size: 16px; line-height: 24px; text-align: left; ">Value</span>&nbsp;</td><td><span style="font-size: 16px; line-height: 24px; text-align: left; ">Comment</span>&nbsp;</td></tr><tr><td><span style="font-size: 16px; line-height: 24px; text-align: left; ">Library</span>&nbsp;</td><td><span style="font-size: 16px; line-height: 24px; text-align: left; ">OperatingSystem</span>&nbsp;</td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td><span style="font-size: 16px; line-height: 24px; text-align: left; ">Library</span>&nbsp;</td><td style="text-align: left; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">testlibs/LoginLibrary.py</td><td><span style="font-size: 16px; line-height: 24px; text-align: left; ">#导入用户自定义库</span>&nbsp;</td></tr><tr><td>Test Setup</td><td>Clear Login Database</td><td>#每个测试用例执行时会先执行setup</td></tr><tr><td>Test Teardown&nbsp;</td><td><br></td><td>#每个测试用例执行完后会执行teardown</td></tr></tbody></table><br><br></div><div>2. 编写测试用例</div><div><table border="1" cellpadding="3" cellspacing="0" width="500" style="width: 800px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><tbody><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">&nbsp;Test Case</td><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">&nbsp;Action</td><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">Argument&nbsp;</td><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">&nbsp;Argument</td><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">Argument&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">&nbsp;User can create an account and log in</td><td>Create Valid User</td><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">fred</td><td>P4ssw0rd</td><td>#关键字驱动,即：调用keyword表中的同名关键字</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>Login</td><td>fred
+</td><td>P4ssw0rd&nbsp;&nbsp;</td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>Creating user with invalid password should fail
+</td><td>[Template]</td><td>Creating user with invalid password</td><td>&nbsp;</td><td>#加上[Template]后则关键字驱动变为数据驱动</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>abCD5</td><td>${PWD INVALID LENGTH}</td><td><br></td><td><br></td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>abCD567890123</td><td>${PWD INVALID LENGTH}
+</td><td>&nbsp;</td><td><br></td></tr></tbody></table></div><div><br></div><div><br></div><div>3. 使用关键字</div><div><br></div><div><table border="1" cellpadding="3" cellspacing="0" width="500" style="width: 800px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><tbody><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">Keyword</td><td>&nbsp;Action</td><td>Argument&nbsp;</td><td>&nbsp;Argument</td><td>Argument&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>Clear Login Database&nbsp;</td><td>Remove file<br></td><td>${DATABASE FILE}&nbsp;</td><td><br></td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>Create Valid User</td><td>[Arguments]</td><td>${username}</td><td>${password}</td><td>&nbsp;#定义关键字可以理解为定义函数实现</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>Create user</td><td>${username}
+</td><td>${password}
+</td><td>#Create User为LoginLibrary.py中定义的关键字，robot Framework会忽略下划线</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>Status should be</td><td>SUCCESS</td><td>&nbsp;</td><td style="text-align: left;">#同上</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>Login</td><td>[Arguments]&nbsp;&nbsp;</td><td>${username}
+</td><td>${password}&nbsp;&nbsp;</td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>Attempt to login with credentials</td><td>${username}
+</td><td>${password}&nbsp;&nbsp;</td><td>#同上</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>Status Should Be&nbsp;&nbsp;</td><td>Logged In</td><td>&nbsp;</td><td><br></td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>Creating user with invalid password&nbsp;</td><td>[Arguments]
+</td><td>${password}
+</td><td>${error}</td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>Create user
+</td><td>username</td><td>${password}</td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>Status should be&nbsp;&nbsp;</td><td>Creating user failed: ${error}&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; ">&nbsp;</td></tr></tbody></table></div><br><div>4. 使用变量&nbsp;</div><div><br><table border="1" cellpadding="3" cellspacing="0" width="500" style="width: 600px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><tbody><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>Variable</td><td>&nbsp;Value</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>${DATABASE FILE}</td><td>${TEMPDIR}${/}robotframework-quickstart-db.txt</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>${PWD INVALID LENGTH}</td><td>Password must be 7-12 characters long</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></div><div><br></div><div>5. 自定义关键字返回值</div><div><div>用户关键字也可以返回值，返回值使用[Return]定义。该值可以赋给测试用例中的变量或其他关键字。</div></div><div><table border="1" cellpadding="3" cellspacing="0" width="500" style="width: 600px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><tbody><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;Test Case</td><td>Action&nbsp;</td><td>Argument&nbsp;</td><td>Argument&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;One return value</td><td>${return} =</td><td>&nbsp;Return one value</td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>Should Be Equal</td><td>&nbsp;${return}</td><td>one&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;Two return values</td><td>&nbsp;@{list}=</td><td>Return two values&nbsp;</td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>&nbsp;${first}</td><td>${second} =</td><td>Return two values&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></div><div><br></div><div><table border="1" cellpadding="3" cellspacing="0" width="500" style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><tbody><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;Keyword</td><td>&nbsp;Action</td><td>Argument&nbsp;</td><td>Argument</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;Return one value</td><td>&nbsp;[Return]</td><td>one&nbsp;</td><td>&nbsp;</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;Return two values</td><td>&nbsp;[Return]</td><td>one&nbsp;</td><td>two</td></tr></tbody></table></div><div style="text-align: -webkit-auto;"><font size="3"><span style="line-height: normal;"><br></span></font></div><div>五. 测试用例的执行</div><div>测试用例完成后，就该是执行了，这非常简单：打开命令窗口，进入测试集所在目录，然后输入命令：pybot XXX.html即可。</div><div>当目录下有多个测试文件时，直接输入测试文件所在的目录名，则所有测试文件都会执行，且每个测试文件作为一个测试集，这在测试报告中有所体现。</div><div><br></div><div>六、测试库</div>
+<div>&nbsp;1. 八个标准库，可以直接导入使用。</div><blockquote>
+<ul class="simple">
+<li><a class="reference internal" href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html?r=2.6.3#builtin-library">BuiltIn</a></li>
+<li><a class="reference internal" href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html?r=2.6.3#operatingsystem-library">OperatingSystem</a></li>
+<li><a class="reference internal" href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html?r=2.6.3#telnet-library">Telnet</a></li>
+<li><a class="reference internal" href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html?r=2.6.3#collections-library">Collections</a></li>
+<li><a class="reference internal" href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html?r=2.6.3#string-library">String</a></li>
+<li><a class="reference internal" href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html?r=2.6.3#dialogs-library">Dialogs</a></li>
+<li><a class="reference internal" href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html?r=2.6.3#screenshot-library">Screenshot</a></li>
+<li><a class="reference internal" href="http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html?r=2.6.3#remote-library">Remote</a></li></ul></blockquote><div>2. 扩展库，需要下载安装后才能使用。</div><div><ul><li><a class="reference external" href="http://code.google.com/p/robotframework-seleniumlibrary">SeleniumLibrary</a>&nbsp;：web方面测试的扩展库</li><li>&nbsp;<a class="reference external" href="http://code.google.com/p/robotframework-swinglibrary">SwingLibrary</a>：</li></ul><div>3. 用户自定义的Test Library库文件</div></div><div>这个库文件是将待测程序的所有接口函数提出来，使用python写的一个Library文件。需要一定的编程基础才能很好的写出测试所需的接口库函数。</div><div><br></div><div>七、其它</div><div>&nbsp;在一个测试集中，可能包含多个测试文件，为重用关键字及变量，可以将关键字及变量单独生成文件，然后在测试文件的setting中导入资源文件即可。</div><div><br></div><table border="1" cellpadding="3" cellspacing="0" width="500"><tbody><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;Setting</td><td>&nbsp;Value</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;Resource</td><td>Variable.html</td></tr><tr style="border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; "><td>&nbsp;Resource</td><td>&nbsp;keyword.html</td></tr></tbody></table><div style="text-align: -webkit-auto;"><br></div>
+
+
+
+</DIV></DIV><!--end: forFlow -->
+
+</BODY></HTML>
